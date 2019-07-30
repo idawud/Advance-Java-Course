@@ -1,9 +1,11 @@
 package org.glblcd.day2;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class Main {
+public class Main implements Runnable {
     private int count;
     private String name;
     private final LocalDate createdOn;
@@ -16,10 +18,26 @@ public class Main {
 
     public static void main(String[] args) {
         Main m = new Main(17, "dawud");
-        m.run();
+        //  m.run();
+        Thread t = new Thread(m);
+        t.start(); 
+
+
+        //************************************************************************
+        // Running the custom List: Generics
+        //************************************************************************
+
+        MyList<String> theList = new MyList<String>();
+        MyList<Person> people = new MyList<>();
+
+        //************************************************************************
+        // java inbuilt Collections
+        //************************************************************************
+        List<String> names = new ArrayList<>();
+
     }
 
-    private void run() {
+    public void run() {
         System.out.println(this.toString());
     }
 
