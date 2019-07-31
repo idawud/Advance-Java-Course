@@ -20,7 +20,10 @@ public class Main implements Runnable {
         Main m = new Main(17, "dawud");
         //  m.run();
         Thread t = new Thread(m);
-        t.start(); 
+        t.start();
+        for (PrimaryColour c : PrimaryColour.values()){
+            System.out.println(c);
+        }
 
 
         //************************************************************************
